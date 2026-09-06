@@ -406,11 +406,12 @@ function initCliTerminal() {
   let historyIdx = -1;
 
   const commands = {
-    help: "Available CLI Commands:\n • help - Display available commands\n • whoami - Show developer summary\n • skills - List technical skill set\n • projects - Display featured web apps\n • edu - View education details\n • certs - Show certifications & honors\n • contact - Get email & phone info\n • resume - Display & download original Resume PDF\n • sudo hire - Unlock recruiter quick action\n • theme - Toggle color themes (Cyan / Emerald / Amber)\n • time - View current Bengaluru IST time\n • stats - Display academic & development statistics\n • socials - View GitHub and LinkedIn links\n • matrix - Trigger matrix stream effect\n • clear - Clear terminal output",
+    help: "Available CLI Commands:\n • help - Display available commands\n • whoami - Show developer summary\n • skills - List technical skill set\n • projects - Display featured web apps\n • edu - View education details\n • leadership - View Rotaract Club leadership & community service\n • certs - Show certifications & honors\n • contact - Get email & phone info\n • resume - Display & download original Resume PDF\n • sudo hire - Unlock recruiter quick action\n • theme - Toggle color themes (Cyan / Emerald / Amber)\n • time - View current Bengaluru IST time\n • stats - Display academic & development statistics\n • socials - View GitHub and LinkedIn links\n • matrix - Trigger matrix stream effect\n • clear - Clear terminal output",
     whoami: "Likhith G P — Full-Stack Developer & BCA Student at St Claret College, Bengaluru.\nBuilding practical web applications with PHP, MySQL, JS, Python, C++, MongoDB, Supabase.",
     skills: "Languages: Python, Java, C++, PHP, JavaScript, HTML5, CSS3\nFrameworks: Bootstrap, Modern Vanilla CSS\nDatabases: MySQL, MongoDB, Supabase\nTools: Git, GitHub, VS Code, XAMPP",
     projects: "1. Smart Parking Slot Finder [HTML5, CSS3, JS, PHP, MySQL, Bootstrap]\n2. Smart Hostel Management System [HTML5, CSS3, JS, PHP, MySQL]",
     edu: "• St Claret College, Bengaluru (BCA 2025-2027) — CGPA: 7.9\n• Sri Sapthagiri PU College, Tumkur (PUC 2022-2024) — 92%\n• Sri Vasavi Vidyalaya (SSLC 2022) — 74%",
+    leadership: "Rotaract Club of St. Claret College Autonomous, Bengaluru\n• Role: Secretary (Rotary Year 2026–27)\n• District: Rotary District 3192\n• Effective From: 22 August 2026\n• Focus: Club Administration, Activity Coordination, Community Service & Youth Leadership",
     certs: "• Winter Internship Technical Training (India Space Lab, 2026)\n• Accountant Compulsory Internship (Sri Nidhi Cloth & Jewellers, Nelamangala)\n• Java Programming Fundamentals (Infosys Springboard)\n• Project Management (NPTEL)\n• Emotional Intelligence (NPTEL)\n• Winner — IT Quiz INSPIRE 2024",
     contact: "Email: likhithgps@gmail.com | Phone: +91 6361267643 | GitHub: https://github.com/likhithgp2006 | LinkedIn: https://www.linkedin.com/in/likhith-g-p-334755427",
     resume: "Displaying & downloading Likhith's Resume-hackerresume.pdf...",
@@ -648,6 +649,102 @@ function viewCertificateModal(title, issuer, details) {
         </a>
         <button class="btn btn-outline" onclick="closeSimModal()">
           <i class="fa-solid fa-xmark"></i> Close Verification Window
+        </button>
+      </div>
+    </div>
+  `;
+
+  simModal.classList.add('active');
+}
+
+function viewLeadershipModal() {
+  const simModal = document.getElementById('simModal');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalBody = document.getElementById('modalBody');
+
+  if (!simModal || !modalBody) return;
+
+  modalTitle.innerHTML = `<i class="fa-solid fa-file-certificate"></i> Official Appointment Letter — Rotaract Club Secretary (RY 2026–27)`;
+
+  modalBody.innerHTML = `
+    <div style="text-align: center;">
+      <!-- Header meta bar -->
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 18px; padding: 14px 20px; background: #090d14; border: 1px solid var(--border-color); border-radius: 10px;">
+        <div style="text-align: left;">
+          <div style="font-family: var(--font-mono); font-size: 0.74rem; color: var(--secondary); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700;">
+            OFFICIAL ROTARACT APPOINTMENT LETTER
+          </div>
+          <div style="font-size: 1.1rem; font-weight: 800; color: var(--text-main); margin-top: 2px;">
+            Secretary — Rotaract Club of St. Claret College Autonomous
+          </div>
+          <div style="font-size: 0.82rem; color: var(--text-muted); font-family: var(--font-mono); margin-top: 2px;">
+            Rotary District 3192 • Rotary Year 2026–27 • Date: 22/08/2026
+          </div>
+        </div>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <a href="https://drive.google.com/file/d/1Jehw0mWLHWgx0H5jV7_2Ccu7QDm7OMuJ/view?usp=sharing" target="_blank" rel="noopener" class="btn btn-outline" style="font-size: 0.84rem; padding: 8px 16px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;" title="Open original on Google Drive">
+            <i class="fa-brands fa-google-drive" style="color: #4285F4;"></i> Google Drive
+          </a>
+          <a href="rotaract_secretary_appointment.jpg" download="Likhith_GP_Rotaract_Secretary_Appointment.jpg" class="btn btn-primary" style="font-size: 0.84rem; padding: 8px 18px; text-decoration: none;">
+            <i class="fa-solid fa-download"></i> Download Image
+          </a>
+          <a href="rotaract_secretary_appointment.jpg" target="_blank" rel="noopener" class="btn btn-outline" style="font-size: 0.84rem; padding: 8px 14px; text-decoration: none;" title="Open in high resolution">
+            <i class="fa-solid fa-up-right-from-square"></i> Full Resolution
+          </a>
+        </div>
+      </div>
+
+      <!-- High-Quality Document Image Container -->
+      <div style="position: relative; border-radius: 12px; overflow: hidden; border: 2px solid var(--primary); box-shadow: 0 18px 50px rgba(0,0,0,0.7), 0 0 30px rgba(0, 240, 255, 0.2); background: #06090e; margin-bottom: 22px;">
+        <img src="rotaract_secretary_appointment.jpg" alt="Official Appointment Letter - Secretary of Rotaract Club of St. Claret College Autonomous" style="width: 100%; max-height: 72vh; object-fit: contain; display: block; margin: 0 auto; transition: transform 0.3s ease;">
+      </div>
+
+      <!-- Verification & Signatories Details Box -->
+      <div style="background: #090d14; border: 1px solid var(--border-color); border-radius: 10px; padding: 18px 20px; text-align: left; font-family: var(--font-mono); font-size: 0.82rem; color: var(--text-muted); margin-bottom: 22px; line-height: 1.7;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px;">
+          <div>
+            <span style="color: var(--text-dim); font-size: 0.72rem; text-transform: uppercase;">Appointee / Candidate:</span><br>
+            <strong style="color: var(--text-main); font-size: 0.92rem;">Rtr. Likhith G P</strong> (Secretary)
+          </div>
+          <div>
+            <span style="color: var(--text-dim); font-size: 0.72rem; text-transform: uppercase;">President (RY 2026–27):</span><br>
+            <strong style="color: var(--text-main);">Rtr. Deekshith Vishwakarma R</strong><br>
+            <span style="font-size: 0.75rem; color: var(--text-dim);">Rotaract Club SCC Autonomous</span>
+          </div>
+          <div>
+            <span style="color: var(--text-dim); font-size: 0.72rem; text-transform: uppercase;">Secretary (Rotary Jalahalli):</span><br>
+            <strong style="color: var(--text-main);">Rtn. Vijay Kumar BS</strong><br>
+            <span style="font-size: 0.75rem; color: var(--text-dim);">District 3192</span>
+          </div>
+          <div>
+            <span style="color: var(--text-dim); font-size: 0.72rem; text-transform: uppercase;">President (Rotary Jalahalli):</span><br>
+            <strong style="color: var(--text-main);">Rtn. Neil Rajan</strong><br>
+            <span style="font-size: 0.75rem; color: var(--text-dim);">District 3192</span>
+          </div>
+        </div>
+        <div style="margin-top: 14px; padding-top: 12px; border-top: 1px dashed rgba(255,255,255,0.1); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px;">
+          <div>
+            <span style="color: var(--text-dim);">Theme:</span> <strong style="color: var(--secondary);">"United in Purpose, Fearless in Action, Limitless in Potential"</strong>
+          </div>
+          <div style="color: var(--primary);">
+            <i class="fa-solid fa-circle-check"></i> Authenticated & Validated
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
+        <a href="https://drive.google.com/file/d/1Jehw0mWLHWgx0H5jV7_2Ccu7QDm7OMuJ/view?usp=sharing" target="_blank" rel="noopener" class="btn btn-outline" style="font-size: 0.88rem; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;" title="Open original on Google Drive">
+          <i class="fa-brands fa-google-drive" style="color: #4285F4;"></i> Google Drive
+        </a>
+        <a href="rotaract_secretary_appointment.jpg" download="Likhith_GP_Rotaract_Secretary_Appointment.jpg" class="btn btn-primary" style="font-size: 0.88rem; text-decoration: none;">
+          <i class="fa-solid fa-download"></i> Save Official Document
+        </a>
+        <button class="btn btn-outline" onclick="window.print()" style="font-size: 0.88rem;">
+          <i class="fa-solid fa-print"></i> Print Document
+        </button>
+        <button class="btn btn-outline" onclick="closeSimModal()" style="font-size: 0.88rem;">
+          <i class="fa-solid fa-xmark"></i> Close Window
         </button>
       </div>
     </div>
