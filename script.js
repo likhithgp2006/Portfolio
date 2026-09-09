@@ -1,7 +1,6 @@
 // LIKHITH G P — FULL-STACK PORTFOLIO JS SCRIPT
 
 document.addEventListener('DOMContentLoaded', () => {
-  initCursorOrb();
   initNeat3DBg();
   initScrollAnimations();
   initHeroTypewriter();
@@ -182,59 +181,10 @@ function initThemeSwitcher() {
 }
 
 /* -------------------------------------------------------------
- * 2. COMPACT GLOWING CURSOR ORB (DRAG ANIMATION SUPPORT)
+ * 2. CURSOR ORB (DISABLED)
  * ------------------------------------------------------------- */
 function initCursorOrb() {
-  const orb = document.getElementById('cursor-orb');
-  if (!orb) return;
-
-  let mouseX = window.innerWidth / 2;
-  let mouseY = window.innerHeight / 2;
-  let orbX = mouseX;
-  let orbY = mouseY;
-  let isDragging = false;
-
-  window.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  });
-
-  window.addEventListener('mousedown', () => {
-    isDragging = true;
-    orb.classList.add('clicking');
-  });
-
-  window.addEventListener('mouseup', () => {
-    isDragging = false;
-    orb.classList.remove('clicking');
-  });
-
-  // Smooth trailing orb physics
-  function animateOrb() {
-    orbX += (mouseX - orbX) * 0.22;
-    orbY += (mouseY - orbY) * 0.22;
-
-    orb.style.left = orbX + 'px';
-    orb.style.top = orbY + 'px';
-
-    requestAnimationFrame(animateOrb);
-  }
-  animateOrb();
-
-  // Hover detection for reactive text & interactive elements
-  const interactiveSelectors = 'a, button, input, textarea, select, .chip-btn, .nav-link, .filter-tab, .parking-slot, .portal-btn, .cmd-item, .react-text, .copy-btn';
-  
-  document.addEventListener('mouseover', (e) => {
-    if (e.target.closest(interactiveSelectors)) {
-      orb.classList.add('hovered');
-    }
-  });
-
-  document.addEventListener('mouseout', (e) => {
-    if (e.target.closest(interactiveSelectors)) {
-      orb.classList.remove('hovered');
-    }
-  });
+  // Cursor animation removed per user request
 }
 
 /* -------------------------------------------------------------
