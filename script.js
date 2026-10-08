@@ -360,7 +360,7 @@ function initCliTerminal() {
     whoami: "Likhith G P — Full-Stack Developer & BCA Student at St Claret College, Bengaluru.\nBuilding practical web applications with PHP, MySQL, JS, Python, C++, MongoDB, Supabase.",
     skills: "Languages: Python, Java, C++, PHP, JavaScript, HTML5, CSS3\nFrameworks: Bootstrap, Modern Vanilla CSS\nDatabases: MySQL, MongoDB, Supabase\nTools: Git, GitHub, VS Code, XAMPP",
     projects: "1. Smart Parking Slot Finder [HTML5, CSS3, JS, PHP, MySQL, Bootstrap]\n2. Smart Hostel Management System [HTML5, CSS3, JS, PHP, MySQL]",
-    edu: "• St Claret College, Bengaluru (BCA 2025-2027) — CGPA: 7.9\n• Sri Sapthagiri PU College, Tumkur (PUC 2022-2024) — 92%\n• Sri Vasavi Vidyalaya (SSLC 2022) — 74%",
+    edu: "• St Claret College, Bengaluru (BCA 2024-2027) — CGPA: 7.9\n• Sri Sapthagiri PU College, Tumkur (PUC 2022-2024) — 92%\n• Sri Vasavi Vidyalaya (SSLC 2022) — 74%",
     leadership: "Rotaract Club of St. Claret College Autonomous, Bengaluru\n• Role: Secretary (Rotary Year 2026–27)\n• District: Rotary District 3192\n• Effective From: 22 August 2026\n• Focus: Club Administration, Activity Coordination, Community Service & Youth Leadership",
     certs: "• Winter Internship Technical Training (India Space Lab, 2026)\n• Accountant Compulsory Internship (Sri Nidhi Cloth & Jewellers, Nelamangala)\n• Java Programming Fundamentals (Infosys Springboard)\n• Project Management (NPTEL)\n• Emotional Intelligence (NPTEL)\n• Winner — IT Quiz INSPIRE 2024",
     contact: "Email: likhithgps@gmail.com | Phone: +91 6361267643 | GitHub: https://github.com/likhithgp2006 | LinkedIn: https://www.linkedin.com/in/likhith-g-p-334755427",
@@ -534,28 +534,117 @@ function openResumeModal() {
 
   const resumeFile = "Likhith's Resume-hackerresume.pdf";
 
-  modalTitle.innerHTML = `<i class="fa-solid fa-file-pdf"></i> Likhith G P — Resume (HackerResume)`;
-  
+  modalTitle.innerHTML = `<i class="fa-solid fa-file-pdf"></i> Likhith G P — Resume`;
+
   modalBody.innerHTML = `
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:12px;">
-      <div style="font-family:var(--font-mono); font-size:0.88rem; color:var(--text-muted);">
+      <div style="font-family:var(--font-mono); font-size:0.85rem; color:var(--text-muted);">
         <i class="fa-solid fa-circle-check" style="color:var(--secondary)"></i> Official Document (${resumeFile})
       </div>
-      <div style="display:flex; gap:10px; flex-wrap:wrap;">
-        <a href="${resumeFile}" download="${resumeFile}" class="btn btn-primary" style="text-decoration:none;">
-          <i class="fa-solid fa-download"></i> Download Resume PDF
+      <div style="display:flex; gap:8px; flex-wrap:wrap;">
+        <a href="${resumeFile}" download="${resumeFile}" class="btn btn-primary" style="text-decoration:none; padding: 8px 14px; font-size: 0.84rem;">
+          <i class="fa-solid fa-download"></i> Download PDF
         </a>
-        <a href="${resumeFile}" target="_blank" class="btn btn-outline" style="text-decoration:none;">
-          <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Fullscreen
+        <a href="${resumeFile}" target="_blank" class="btn btn-outline" style="text-decoration:none; padding: 8px 14px; font-size: 0.84rem;">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> Open PDF
         </a>
+        <button onclick="window.print()" class="btn btn-outline" style="padding: 8px 14px; font-size: 0.84rem;">
+          <i class="fa-solid fa-print"></i> Print
+        </button>
       </div>
     </div>
 
-    <!-- EMBEDDED ORIGINAL PDF VIEWER -->
-    <div style="width:100%; background:#101622; border:1px solid var(--border-color); border-radius:8px; overflow:hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-      <iframe src="${resumeFile}#toolbar=1" style="width:100%; height:75vh; border:none;" title="Likhith G P Resume PDF">
-        <p style="padding: 20px; color: var(--text-main);">Your browser does not support inline PDFs. <a href="${resumeFile}" download="${resumeFile}" style="color: var(--primary)">Click here to download ${resumeFile}</a>.</p>
-      </iframe>
+    <!-- RESPONSIVE PAPER RESUME VIEW -->
+    <div class="resume-paper">
+      <div class="resume-header-paper">
+        <div class="resume-name-paper">LIKHITH G P</div>
+        <div class="resume-title-paper">Full-Stack Developer</div>
+        <div class="resume-contact-paper">
+          <span><i class="fa-solid fa-envelope"></i> likhithgps@gmail.com</span>
+          <span>|</span>
+          <span><i class="fa-solid fa-phone"></i> +916361267643</span>
+          <span>|</span>
+          <span><i class="fa-solid fa-location-dot"></i> Bengaluru</span>
+        </div>
+        <div class="resume-contact-paper" style="margin-top:6px;">
+          <a href="https://github.com/likhithgp2006" target="_blank" style="color:#111827; text-decoration:underline; font-weight:600;"><i class="fa-brands fa-github"></i> GitHub</a>
+          <span>|</span>
+          <a href="https://www.linkedin.com/in/likhith-g-p-10651130b/" target="_blank" style="color:#111827; text-decoration:underline; font-weight:600;"><i class="fa-brands fa-linkedin"></i> Linkedin</a>
+        </div>
+      </div>
+
+      <!-- EDUCATION -->
+      <div class="resume-sec-title">EDUCATION</div>
+      
+      <div class="resume-item-paper">
+        <div class="resume-item-head">
+          <span>St claret College</span>
+          <span style="font-weight:600; color:#4b5563;">Bengaluru &nbsp; 2024 - 2027</span>
+        </div>
+        <div class="resume-item-sub">Computer Science BCA</div>
+        <div style="font-size:0.88rem; color:#374151;">CGPA: 7.9</div>
+      </div>
+
+      <div class="resume-item-paper">
+        <div class="resume-item-head">
+          <span>Sri Sapthagiri PU COllege</span>
+          <span style="font-weight:600; color:#4b5563;">Tumkur &nbsp; 2022 - 2024</span>
+        </div>
+        <div class="resume-item-sub">SCBA PUC</div>
+        <div style="font-size:0.88rem; color:#374151;">Percentage: 92%</div>
+      </div>
+
+      <div class="resume-item-paper">
+        <div class="resume-item-head">
+          <span>Sri Vasavi Vidyalaya</span>
+          <span style="font-weight:600; color:#4b5563;">Chikkamagaluru &nbsp; 2022</span>
+        </div>
+        <div class="resume-item-sub">State SSLC</div>
+        <div style="font-size:0.88rem; color:#374151;">Percentage: 74%</div>
+      </div>
+
+      <!-- SKILLS -->
+      <div class="resume-sec-title">SKILLS</div>
+      <div class="resume-item-paper" style="font-size:0.88rem; line-height:1.7;">
+        <div><strong>Programming Languages:</strong> C++, Python, Java, HTML, CSS5</div>
+        <div><strong>Libraries/Frameworks:</strong> Javascript</div>
+        <div><strong>Tools / Platforms:</strong> Git, VS Code</div>
+        <div><strong>Databases:</strong> SQL, MongoDB, Supabase</div>
+      </div>
+
+      <!-- PROJECTS / OPEN-SOURCE -->
+      <div class="resume-sec-title">PROJECTS / OPEN-SOURCE</div>
+
+      <div class="resume-item-paper">
+        <div class="resume-item-head">
+          <span>Smart Parking Slot Finder &nbsp;|&nbsp; <a href="https://github.com/likhithgp2006/Smart-Parking-Slot-Finder" target="_blank" style="color:#2563eb; text-decoration:underline;">Link</a></span>
+        </div>
+        <div class="resume-item-sub">Frontend: HTML5, CSS3, JavaScript, Bootstrap, PHP, MySQL, Visual Studio Code, XAMPP, Git, GitHub</div>
+        <div style="font-size:0.88rem; color:#374151; margin-top:4px; line-height:1.6;">
+          The Smart Parking Slot Finder is a web-based system that helps users find and book available parking spaces easily. It displays real-time slot availability, enables online booking and payment, and maintains booking history. The admin can manage parking slots and monitor .
+        </div>
+      </div>
+
+      <div class="resume-item-paper">
+        <div class="resume-item-head">
+          <span>Smart Hostel Management System &nbsp;|&nbsp; <a href="https://github.com/likhithgp2006/Hostel-Management-System-Frontend" target="_blank" style="color:#2563eb; text-decoration:underline;">Link</a></span>
+        </div>
+        <div class="resume-item-sub">Frontend: HTML5, CSS3, JavaScript, Bootstrap, PHP, MySQL, Visual Studio Code, XAMPP, Git, GitHub</div>
+        <div style="font-size:0.88rem; color:#374151; margin-top:4px; line-height:1.6;">
+          The Smart Hostel Management System is a web application that automates hostel operations such as room allocation, fee management, attendance, and leave requests. It provides separate portals for students and administrators to manage records efficiently. .
+        </div>
+      </div>
+
+      <!-- CERTIFICATIONS -->
+      <div class="resume-sec-title">CERTIFICATIONS</div>
+      <ul class="resume-bullet-list">
+        <li>Emotional Intelligence - <strong>NPTEL</strong></li>
+        <li>Project Management - <strong>NPTEL</strong></li>
+        <li>Winter Internship Technical Training Program (2026) - <strong>India Space Lab</strong></li>
+        <li>Java Programming Fundamentals - <strong>Infosys Springboard</strong></li>
+        <li>Accountant - <strong>Sri Nidhi Cloth and Jewellers (Nelamangala)</strong></li>
+        <li>IT Quiz, INSPIRE - <strong>St.Claret College</strong></li>
+      </ul>
     </div>
   `;
 

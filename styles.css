@@ -2224,6 +2224,57 @@ footer {
     width: 100%;
     justify-content: center;
   }
+
+  /* MODAL & RESUME RESPONSIVE ALIGNMENT FIXES */
+  .modal-overlay {
+    padding: 10px;
+  }
+
+  .modal-card {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+
+  .modal-body {
+    padding: 14px 10px;
+  }
+
+  .resume-paper {
+    padding: 20px 14px;
+    border-radius: 6px;
+  }
+
+  .resume-name-paper {
+    font-size: 1.45rem;
+  }
+
+  .resume-title-paper {
+    font-size: 0.9rem;
+  }
+
+  .resume-contact-paper {
+    font-size: 0.8rem;
+    gap: 4px 8px;
+  }
+
+  .resume-sec-title {
+    font-size: 0.95rem;
+    margin: 16px 0 8px 0;
+  }
+
+  .resume-item-head {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 4px 10px;
+    font-size: 0.9rem;
+  }
+
+  .resume-bullet-list {
+    padding-left: 18px;
+    margin-left: 0;
+    font-size: 0.84rem;
+  }
 }
 
 /* PRINT STYLES FOR RESUME */
